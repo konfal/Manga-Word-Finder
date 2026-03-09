@@ -2,10 +2,6 @@
 
 A small Python script that scans manga pages and tells you exactly where a specific word appears.
 
-I built this because I kept having moments like:
-
-"I know this line exists somewhere in this volume… but where?"
-
 Instead of manually flipping through hundreds of pages, this script scans the pages using OCR and tells you which images contain the word you're looking for.
 
 It works with any manga as long as the pages are stored as images.
