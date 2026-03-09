@@ -2,9 +2,6 @@ import pytesseract
 from PIL import Image
 import os
 
-# ---------------------------------------------------------
-# 1️⃣ SETUP
-# ---------------------------------------------------------
 
 # change this if your tesseract is installed somewhere else
 pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
@@ -12,17 +9,13 @@ pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tessera
 # this is the folder that contains ALL your manga volumes
 # example structure:
 # C:\manga
-#    ├── volume 45
-#    ├── volume 46
-#    └── volume 47
+#    ├ volume 45
+#    ├volume 46
+#    └ volume 47
 BASE_FOLDER = r"C:\manga"
 
-# ---------------------------------------------------------
-# 2️⃣ USER INPUT
-# ---------------------------------------------------------
-
 # ask the user which volumes they want to scan
-# example input: volume 45,volume 46
+# example input: volume 45,volume 46... (I recommend only inputting a few volumes at once because otherwise it's going to take a very long time for the program to output the results if you input many volumes or the whole manga at once.)
 volumes_input = input("Enter volumes (example: volume 45,volume 46): ")
 
 # word we want to search inside the manga pages
@@ -31,10 +24,6 @@ SEARCH_WORD = input("Enter word to search: ").lower()
 # turn the input string into a list
 # "volume 45,volume 46" -> ["volume 45", "volume 46"]
 volumes = [v.strip() for v in volumes_input.split(",")]
-
-# ---------------------------------------------------------
-# 3️⃣ SCAN EACH VOLUME
-# ---------------------------------------------------------
 
 for volume in volumes:
 
@@ -67,4 +56,5 @@ for volume in volumes:
                 except:
                     # sometimes OCR crashes on weird images
                     # we just skip the page and keep going
+
                     pass
