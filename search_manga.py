@@ -12,7 +12,7 @@ pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tessera
 #    ├ volume 45
 #    ├volume 46
 #    └ volume 47
-BASE_FOLDER = r"C:\manga"
+BASE_FOLDER = r"C:\manga" # this is just an example. If the name of your folder is different, change "manga" to match the name of the folder you are using.
 
 # ask the user which volumes they want to scan
 # example input: volume 45,volume 46... (I recommend only inputting a few volumes at once because otherwise it's going to take a very long time for the program to output the results if you input many volumes or the whole manga at once.)
@@ -58,3 +58,4 @@ for volume in volumes:
                     # we just skip the page and keep going
 
                     pass
+
